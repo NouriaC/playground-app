@@ -1,0 +1,159 @@
+/* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px */
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-1: hsl(26, 100%, 55%);
+  --primary-2: hsl(25, 100%, 94%);
+  --neutral-v-dark-b: hsl(220, 13%, 13%);
+  --neutral-dark-g-b: hsl(219, 9%, 45%);
+  --neutral-g-b: hsl(220, 14%, 75%);
+  --neutral-l-g-b: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --shadow: hsl(0, 0%, 0%, 0.75);
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+nav {
+  background: var(--white);
+  margin: 2rem 0;
+}
+
+.nav-center {
+  width: 90vw;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-menu button {
+  background: transparent;
+  border-color: transparent;
+  padding-right: 0.5rem;
+}
+
+.nav-cart {
+  display: flex;
+  align-items: center;
+}
+
+.nav-cart .avatar {
+  width: 2rem;
+  margin-left: 2.5rem;
+}
+
+.links {
+  padding-top: 2rem;
+  display: none;
+  overflow: hidden;
+}
+
+.sidebar {
+  display: none;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+/* .btn-container {
+  position: relative;
+} */
+
+.prev-btn {
+  position: absolute;
+  top: 44%;
+  left: 10%;
+}
+
+.next-btn {
+  position: absolute;
+  top: 44%;
+  right: 2%;
+}
+
+.prev-btn,
+.next-btn {
+  padding: 1.75rem 2rem;
+  border-radius: 50%;
+  border: none;
+  text-align: center;
+  color: var(--white);
+}
+
+.product {
+  margin-top: 2rem;
+}
+
+.product-centre {
+  width: 90vw;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.product-centre h4 {
+  text-transform: uppercase;
+  color: var(--primary-1);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.2rem;
+}
+
+.product-centre h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-centre p {
+  font-size: 1.7rem;
+  color: var(--neutral-dark-g-b);
+}
+
+.price-container {
+  width: 90vw;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-centre {
+  width: 90vw;
+  margin: 0 auto;
+}
+.quantity-container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--neutral-l-g-b);
+  border-radius: 1rem;
+}
