@@ -51,6 +51,8 @@
     </div>
   </nav>
   <!-- sidebar -->
+  <div class="overlay">
+  </div>
   <aside class="sidebar">
     <!-- header -->
     <div class="sidebar-header">
@@ -98,28 +100,29 @@
       durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
     </div>
     <div class="price-container">
-      <h1>$125.00</h1>
-      <h4>50%</h4>
-      <h4>$250.00</h4>
+      <div class="price">
+        <h1>$125.00</h1>
+      <h4 class="discount">50%</h4>
+      </div>
+      <h4 class="discounted-price">$250.00</h4>
     </div>
   </section>
   <section class="cart">
     <div class="cart-centre">
       <div class="quantity-container">
-        <button>
-          <img src="./assets/icon-minus.svg" alt="">
+        <button class="minus">
+          <img src="./assets/icon-minus.svg" alt="minus">
         </button>
         <span>0</span>
-        <button>
-          <img src="./assets/icon-plus.svg" alt="">
+        <button class="plus">
+          <img src="./assets/icon-plus.svg"  alt="plus">
         </button>
       </div>
-      <button>
-        <img src="./assets/icon-cart.svg" alt="">
+      <button class="cart-btn">
+        <img src="./assets/icon-cart.svg"  class="cart-img" alt="">
         Add to cart
       </button>
   </section>
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

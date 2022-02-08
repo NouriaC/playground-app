@@ -145,6 +145,31 @@ nav {
   justify-content: space-between;
 }
 
+.price-container .price {
+  display: flex;
+  align-items: center;
+}
+
+.price-container h1 {
+  font-size: 2.5rem;
+  margin-right: 2rem;
+}
+
+.price-container .discount {
+  font-size: 1.5rem;
+  color: var(--primary-1);
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-2);
+  border-radius: 1rem;
+}
+
+.price-container .discounted-price {
+  font-size: 1.75rem;
+  margin-right: 0.5rem;
+  color: var(--neutral-g-b);
+  text-decoration: line-through;
+}
+
 .cart-centre {
   width: 90vw;
   margin: 0 auto;
@@ -156,4 +181,66 @@ nav {
   justify-content: space-between;
   background-color: var(--neutral-l-g-b);
   border-radius: 1rem;
+}
+
+.quantity-container .minus,
+.quantity-container .plus {
+  background: transparent;
+  border-color: transparent;
+}
+
+.quantity-container .minus {
+  margin-left: 1rem;
+}
+
+.quantity-container .plus {
+  margin-right: 1rem;
+}
+
+.quantity-container img {
+  width: 1.2rem;
+}
+
+.quantity-container span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.cart-btn {
+  width: 100%;
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--primary-1);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.cart-img {
+  fill: var(--white);
+  margin-right: 1.25rem;
+  width: 1.5rem;
+}
+
+/* sidebar */
+
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  inset: 0;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -10;
+}
+
+.open-sidebar {
+  visibility: visible;
+  z-index: 10;
 }
