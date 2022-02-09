@@ -21,6 +21,11 @@
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --shadow: hsl(0, 0%, 0%, 0.75);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -68,12 +73,12 @@ nav {
 
 .links {
   padding-top: 2rem;
-  display: none;
-  overflow: hidden;
+  /* display: none;
+  overflow: hidden; */
 }
 
 .sidebar {
-  display: none;
+  /* display: none; */
 }
 
 .hero {
@@ -224,7 +229,7 @@ nav {
   width: 1.5rem;
 }
 
-/* sidebar */
+/* overlay */
 
 .overlay {
   position: fixed;
@@ -237,10 +242,68 @@ nav {
   display: grid;
   place-items: center;
   visibility: hidden;
-  z-index: -10;
+  /* z-index: -10; */
 }
 
 .open-sidebar {
   visibility: visible;
   z-index: 10;
+}
+
+/* sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100%;
+  background: var(--white);
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+  /* todo hide sidebar */
+}
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 1.5rem;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary-1);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  transform: rotate(360deg);
+}
+
+.sidebar .links a {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--black);
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.sidebar .links a:hover {
+  background: var(--primary-2);
+  padding-left: 1.75rem;
 }
