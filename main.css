@@ -45,8 +45,6 @@ nav {
 
 .nav-center {
   width: 90vw;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 .nav-header {
@@ -77,6 +75,37 @@ nav {
   overflow: hidden; */
 }
 
+@media screen and (min-width: 992px) {
+  .nav-center {
+    max-width: 1440px;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--neutral-l-g-b);
+  }
+  .nav-menu .icon {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+  }
+  .nav-menu .links {
+    display: flex;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+  }
+  .nav-menu .links a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--neutral-dark-g-b);
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    transition: var(--transition);
+  }
+  .nav-menu .links a:hover {
+    color: var(--neutral-v-dark-b);
+  }
+}
+
 .sidebar {
   /* display: none; */
 }
@@ -89,10 +118,6 @@ nav {
   width: 100%;
   display: block;
 }
-
-/* .btn-container {
-  position: relative;
-} */
 
 .prev-btn {
   position: absolute;
