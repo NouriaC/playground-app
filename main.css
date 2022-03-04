@@ -138,10 +138,6 @@ nav {
   }
 }
 
-.sidebar {
-  /* display: none; */
-}
-
 .hero-section {
   position: relative;
 }
@@ -275,6 +271,7 @@ nav {
 .quantity-container .plus {
   background: transparent;
   border-color: transparent;
+  cursor: pointer;
 }
 
 .quantity-container .minus {
@@ -355,8 +352,7 @@ nav {
   }
 }
 
-/* overlay */
-
+/* overlay for the sidebar */
 .overlay {
   position: fixed;
   background: rgba(0, 0, 0, 0.6);
@@ -384,12 +380,17 @@ nav {
   width: 75%;
   height: 100%;
   background: var(--white);
-  z-index: 1;
-  display: none;
+  z-index: 11;
   grid-template-rows: auto 1fr;
   box-shadow: var(--shadow-2);
   transition: var(--transition);
-  /* todo hide sidebar */
+  /* to hide sidebar */
+  transform: translate(-100%);
+}
+
+/* to show sidebar */
+.show-sidebar {
+  transform: translate(0);
 }
 
 @media screen and (min-width: 992px) {

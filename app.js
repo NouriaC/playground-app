@@ -56,3 +56,40 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
   startSlider("prev");
 });
+
+// toggle sidebar + overlay
+
+const closeBtn = document.querySelector(".close-btn");
+const btnMenu = document.querySelector(".icon");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".overlay");
+
+btnMenu.addEventListener("click", () => {
+  sidebar.classList.add("show-sidebar");
+  overlay.classList.add("open-sidebar");
+});
+
+closeBtn.addEventListener("click", () => {
+  sidebar.classList.remove("show-sidebar");
+  overlay.classList.remove("open-sidebar");
+});
+
+// counter
+
+let count = 0;
+
+const value = document.getElementById("value");
+const minus = document.querySelector(".minus");
+const plus = document.querySelector(".plus");
+
+minus.addEventListener("click", () => {
+  if (count > 0) {
+    count--;
+    value.textContent = count;
+  }
+});
+
+plus.addEventListener("click", () => {
+  count++;
+  value.textContent = count;
+});
