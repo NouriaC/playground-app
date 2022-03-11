@@ -44,6 +44,7 @@ main {
 @media screen and (min-width: 768px) {
   main {
     grid-template-columns: 600px 1fr;
+    width: 90vw;
     max-width: 1300px;
     align-items: center;
     margin: 0 auto;
@@ -55,6 +56,7 @@ main {
 
 .hero-section {
   align-self: center;
+  /* padding-left: 3rem; */
 }
 
 .product-section {
@@ -171,7 +173,7 @@ nav {
 .cart-container {
   width: 95vw;
   max-width: 650px;
-  height: 27rem;
+  height: 25rem;
   position: absolute;
   z-index: 5;
   top: 8rem;
@@ -183,7 +185,7 @@ nav {
 
 .cart-header {
   /* margin-bottom: 1rem; */
-  border-bottom: 2px solid var(--neutral-g-b);
+  border-bottom: 1px solid var(--neutral-g-b);
   padding: 2rem;
 }
 
@@ -225,6 +227,17 @@ nav {
   font-size: 1.5rem;
   color: var(--neutral-g-b);
   cursor: pointer;
+}
+
+.cart-body .checkout {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 778px) {
+  .cart-container {
+    display: none;
+  }
 }
 
 /* Hero section */
