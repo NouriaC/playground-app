@@ -35,6 +35,12 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+.loading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--primary-1);
+}
+
 main {
   /* min-height: 100vh; */
   display: grid;
@@ -181,6 +187,11 @@ nav {
   background: var(--white);
   border-radius: 1rem;
   /* padding: 1.5rem; */
+  display: none;
+}
+
+.show-cart-container {
+  display: block;
 }
 
 .cart-header {
@@ -201,13 +212,19 @@ nav {
 .cart-items {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   /* padding: 2rem; */
 }
 
 .cart-items img {
   width: 6.5rem;
   border-radius: var(--borderRadius);
+}
+
+.cart-item-price {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .cart-text {
@@ -260,7 +277,7 @@ nav {
   width: 100%;
   height: 100%;
   transition: all 0.2s ease-in-out;
-  opacity: 0;
+  opacity: 1;
 }
 
 .slide.active {

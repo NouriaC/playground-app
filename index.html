@@ -102,8 +102,12 @@
             alt="product image"
           />
           <div class="cart-text">
-            <p>Fall Limited edition Sneakers</p>
-            <p>$125 x 3 <span>$375.00</span></p>
+            <p class="cart-item-name">Fall Limited edition Sneakers</p>
+            <div class="cart-item-price">
+              <p class="item-price">$125 x</p>
+              <span class="item-quantity">3</span>
+              <span class="item-total">$375.00</span>
+            </div>
           </div>
           <button class="btn-trash">
             <i class="fa-solid fa-trash-can"></i>
@@ -165,7 +169,7 @@
               <img src="./assets/icon-plus.svg" alt="plus" />
             </button>
           </div>
-          <button class="cart-btn">
+          <button class="cart-btn" id="cart-btn-main">
             <img src="./assets/icon-cart.svg" class="cart-img" alt="" />
             Add to cart
           </button>
