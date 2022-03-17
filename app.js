@@ -15,6 +15,25 @@ closeBtn.addEventListener("click", () => {
   overlay.classList.remove("open-sidebar");
 });
 
+// counter
+
+let count = 0;
+
+const value = document.getElementById("item-quantity");
+const minus = document.querySelector(".minus");
+const plus = document.querySelector(".plus");
+
+minus.addEventListener("click", () => {
+  if (count > 0) {
+    count--;
+    value.textContent = count;
+  }
+});
+
+plus.addEventListener("click", () => {
+  count++;
+  value.textContent = count;
+});
 // fetch products API
 
 const mainDOM = document.querySelector("main");
@@ -71,13 +90,16 @@ function addToCart(id) {
   if (!item) {
     let product = findProduct(id);
     // add item to the cart
-    product = { ...product, amount: 1 };
+    product = { ...product, amount: count };
     cart = [...cart, product];
     // add item to the DOM
     addToCartDOM(product);
     console.log(cart);
   } else {
+    // update values
   }
+  // add one to the item count
+  displayCartItemCount();
 }
 
 function findProduct(id) {
@@ -85,7 +107,27 @@ function findProduct(id) {
   return product;
 }
 
-function addToCartDOM({ id, name, amount, price, imgSrc: image, description }) {
+// if (cartItemCountDOM.textContent === "0") {
+//   cartItemCountDOM.style.display = "none";
+// } else {
+//   displayCartItemCount();
+// }
+
+function displayCartItemCount() {
+  const amount = cart.reduce((total, cartItem) => {
+    return (total += cartItem.amount);
+  }, 0);
+  cartItemCountDOM.textContent = amount;
+}
+
+// function displayCartTotal() {
+//   let total = cart.reduce((total, cartItem) => {
+//     return (total += cartItem.price * cartItem.amount);
+//   }, 0);
+//   cartTotalDOM.textContent = `$${total}`;
+// }
+
+function addToCartDOM({ id, name, amount, price, imgSrc: image }) {
   cartItemsDOM.innerHTML = `<img
             src="${image}"
             alt="${name}"
@@ -94,34 +136,14 @@ function addToCartDOM({ id, name, amount, price, imgSrc: image, description }) {
             <p class="cart-item-name">${name}</p>
             <div class="cart-item-price">
               <p class="item-price">$${price} x</p>
-              <span class="item-quantity">${amount}</span>
-              <span class="item-total">$375.00</span>
+              <p class="item-quantity">${amount}</p>
+              <span class="item-total">$${price * amount}</span>
             </div>
           </div>
-          <button class="btn-trash">
+          <button class="btn-trash" data-id="${id}">
             <i class="fa-solid fa-trash-can"></i>
           </button>`;
 }
-
-// counter
-
-let count = 0;
-
-const value = document.getElementById("value");
-const minus = document.querySelector(".minus");
-const plus = document.querySelector(".plus");
-
-minus.addEventListener("click", () => {
-  if (count > 0) {
-    count--;
-    value.textContent = count;
-  }
-});
-
-plus.addEventListener("click", () => {
-  count++;
-  value.textContent = count;
-});
 
 // import images from "./data.js";
 

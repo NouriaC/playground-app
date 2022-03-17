@@ -108,18 +108,18 @@ nav {
 .nav-cart-btn {
   background: transparent;
   border: transparent;
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   cursor: pointer;
   padding-top: 0.75rem;
 }
 
 .cart-item-count {
   position: absolute;
-  top: 0.3rem;
+  top: -0.3rem;
   right: 3.4rem;
-  font-size: 0.7rem;
-  height: 0.9rem;
-  width: 1.3rem;
+  font-size: 0.8rem;
+  height: 1.7rem;
+  width: 2rem;
   background: var(--primary-1);
   border-radius: 1rem;
   display: flex;
@@ -129,7 +129,7 @@ nav {
 }
 
 .nav-cart .avatar {
-  width: 2.5rem;
+  width: 2.8rem;
   margin-left: 1.5rem;
 }
 
@@ -180,12 +180,13 @@ nav {
   width: 95vw;
   max-width: 650px;
   height: 25rem;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   top: 8rem;
   left: 1rem;
   background: var(--white);
   border-radius: 1rem;
+  box-shadow: var(--shadow-2);
   /* padding: 1.5rem; */
   display: none;
 }
@@ -253,7 +254,14 @@ nav {
 
 @media screen and (min-width: 778px) {
   .cart-container {
-    display: none;
+    width: 500px;
+    height: 24rem;
+    z-index: 5;
+    top: 6rem;
+    left: 55rem;
+
+    /* padding: 1.5rem; */
+    /* display: none; */
   }
 }
 
