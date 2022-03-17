@@ -34,7 +34,6 @@ plus.addEventListener("click", () => {
   count++;
   value.textContent = count;
 });
-// fetch products API
 
 const mainDOM = document.querySelector("main");
 const heroContainer = document.querySelector(".hero-container");
@@ -48,6 +47,7 @@ const cartItemsDOM = document.querySelector(".cart-items");
 const cartItemCountDOM = document.querySelector(".cart-item-count");
 const cartTotalDOM = document.querySelector(".item-total");
 const cartBtn = document.getElementById("cart-btn-main");
+const navCartBtn = document.querySelector(".nav-cart-btn");
 
 import products from "./products.js";
 
@@ -73,6 +73,10 @@ function renderProducts() {
 renderProducts();
 
 let cart = [];
+
+navCartBtn.addEventListener("click", () => {
+  cartContainer.classList.toggle("show-cart-container");
+});
 
 cartBtn.addEventListener("click", () => {
   products.forEach((product) => {
@@ -128,7 +132,10 @@ function displayCartItemCount() {
 // }
 
 function addToCartDOM({ id, name, amount, price, imgSrc: image }) {
-  cartItemsDOM.innerHTML = `<img
+  if (amount === 0) {
+    cartBody.innerHTML = `<div>Your cart is empty</div>`;
+  } else {
+    cartItemsDOM.innerHTML = `<img
             src="${image}"
             alt="${name}"
           />
@@ -143,6 +150,7 @@ function addToCartDOM({ id, name, amount, price, imgSrc: image }) {
           <button class="btn-trash" data-id="${id}">
             <i class="fa-solid fa-trash-can"></i>
           </button>`;
+  }
 }
 
 // import images from "./data.js";
